@@ -1,5 +1,5 @@
 ##################################################
 ## zsh: config
 ##################################################
-plugins+=($plugins autoupdate forgit starship zsh-interactive-cd zsh-navigation-tools zsh-autosuggestions)
+plugins+=($plugins autoupdate direnv forgit starship zsh-interactive-cd zsh-navigation-tools zsh-autosuggestions)
 
