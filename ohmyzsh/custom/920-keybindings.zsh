@@ -1,8 +1,6 @@
 #########################################
-#		INANE PLUGIN: 003: Key bindings
-# version: 2                 2021 Nov 14
-#############################-###########
-# scp ~/.oh-my-zsh/custom/keybindings.zsh philip@granny:/Users/philip/.oh-my-zsh/custom/keybindings.zsh
+#		 INANE PLUGIN: 003: Key bindings
+# version: 2                  2021 Nov 14
 #############################-###########
 
 ## GENERAL
@@ -12,6 +10,9 @@ bindkey -s '^[e' 'exit^M'
 
 # (o)oh-my-zsh (r)eload
 # bindkey -s '^[o^[r' 'omz reload^M'
+
+# (i)nane (r)eload
+bindkey -s '^[i^[r' 'inane-x reload^M'
 
 ## UPDATE: alt-i + alt+u
 ##########################################################
@@ -48,5 +49,10 @@ bindkey -s '^[i^[b^[u' 'brew upgrade^M'
 ## DIRENV: alt-i + alt+d
 ##########################################################
 
-# (i)nane (d)irenv (a)llow directory
-bindkey -s '^[e^[d^[a' 'direnv allow^M'
+# (d)ir(e)nv (a)llow directory
+bindkey -s '^[d^[e^[a' 'direnv allow^M'
+
+if [[ -f ~/bin/action-picker.zsh ]]; then
+	# (s)cript (a)ction (p)icker
+	bindkey -s '^[s^[a^[p' 'action-picker.zsh^M'
+fi

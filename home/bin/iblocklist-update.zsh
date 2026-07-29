@@ -13,7 +13,7 @@ source ~/bin/functions/colours
 SCRIPT_DIR=${0:A:h}
 cd "$SCRIPT_DIR"
 
-msg "${Cyan}Blocklist updator (Transmission))"
+msg "${Cyan}Blocklist updater (Transmission))"
 
 msg "\t${Green}Fetching IPs from ${Blue}~/etc/iblocklist-urls.txt"
 wget2 --progress=bar --no-use-server-timestamps -i ~/etc/iblocklist-urls.txt -O - | sed "/^#.*/d" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | sort --unique > ~/tmp/list_1.txt
