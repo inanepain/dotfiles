@@ -68,6 +68,7 @@
 # ZSH: BIN
 - link:
     ~/bin/action-picker.zsh: home/bin/action-picker.zsh
+    ~/bin/ckhash.zsh: home/bin/ckhash.zsh
     ~/bin/fresh-upgrade.zsh:
         if: '[ ! `hostname` = BlackBetty.local ]'
         path: home/bin/fresh-upgrade.zsh
