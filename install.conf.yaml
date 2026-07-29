@@ -90,7 +90,9 @@
    ~/.oh-my-zsh/custom/050-aliases.zsh: ohmyzsh/custom/050-aliases.zsh
    ~/.oh-my-zsh/custom/051-aliases-php.zsh: ohmyzsh/custom/051-aliases-php.zsh
    ~/.oh-my-zsh/custom/051-aliases-suffix.zsh: ohmyzsh/custom/051-aliases-suffix.zsh
-   ~/.oh-my-zsh/custom/051-aliases-directory.zsh: ohmyzsh/custom/051-aliases-directory.zsh
+   ~/.oh-my-zsh/custom/051-aliases-directory.zsh:
+     if: '[ `hostname` = BlackBetty.local ]'
+     path: ohmyzsh/custom/051-aliases-directory.zsh
    ~/.oh-my-zsh/custom/051-aliases-global.zsh: ohmyzsh/custom/051-aliases-global.zsh
    ~/.oh-my-zsh/custom/052-aliases-git.zsh: ohmyzsh/custom/052-aliases-git.zsh
 
