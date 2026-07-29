@@ -15,34 +15,46 @@ continuation_prompt = "[∙](bright-blue) "
 
 format = """
 [$time$memory_usage$jobs$directory$git_branch$git_status](bold dimmed purple)
-$sudo$env_var$character"""
+$sudo$username$character"""
 
 # move the rest of the prompt to the right
-right_format = """[$cmd_duration$php$battery$status](bold dimmed purple)"""
+right_format = """[$cmd_duration$php$nodejs$direnv$battery$status$hostname](bold dimmed purple)"""
 
 [battery]
+# symbols = "󰂎💀💧🫗🔋🪫🔌💡🔦🪔⌛️⏳📈📉➕➖⌁💦☇▼▽⚡︎☠︎⏚⇣↓"
 full_symbol = "🔋 "
+empty_symbol = "🪫 "
 charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
+discharging_symbol = "⚡︎ "
 format = '\[[$symbol$percentage]($style)\]'
 
-[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+[[battery.display]] # style when capacity is between 0% and 10%
 threshold = 10
 style = "bold red"
+discharging_symbol = "💀 "
 
-[[battery.display]] # "bold yellow" style and 💦 symbol when capacity is between 10% and 30%
+[[battery.display]] # style when capacity is between 10% and 20%
+threshold = 20
+style = "bold yellow"
+discharging_symbol = "🧊 "
+
+[[battery.display]] # style when capacity is between 20% and 30%
 threshold = 30
 style = "bold yellow"
-discharging_symbol = "💦"
+discharging_symbol = "💧 "
 
-[[battery.display]] # "bold red" style and discharging_symbol when capacity is between 0% and 10%
+[[battery.display]] # style when capacity is between 30% and 80%
+threshold = 80
+style = "default"
+
+[[battery.display]] # style when capacity is 100%
 threshold = 100
-style = "bold green"
-# when capacity is over 30%, the battery indicator will not be displayed
+style = "bold purple"
 
-# Replace the "❯" symbol in the prompt with "➜"
+# Replace the "❯" symbol in the prompt with "➜" ➜➤▷
 [character] # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+format = '$symbol'
+success_symbol = "[〉](bold green)" # The "success_symbol" segment is being set to "➜" with the colour "bold green"
 
 [cmd_duration]
 min_time = 500
@@ -55,16 +67,51 @@ truncation_symbol = "…/"
 home_symbol = "🏠"
 format = '(\[[$path]($style)[$read_only]($read_only_style)\])'
 
-[env_var.SIUID]
+[direnv]
+# symbols: ⌂🗂️📂📁
+disabled = false
+symbol = "📁 "
+allowed_msg = "✔︎"
+loaded_msg = "✔︎"
+style = "bold bright-yellow"
+format = '([\[$symbol($loaded/$allowed)\]]($style))'
+
+[env_var.USER]
 style = "purple"
-format = '\[[$env_value]($style)\]'
+format = '[$env_value]($style)'
 default = "unknown user"
 
 [git_branch]
+symbol = ""
+style = 'purple'
 format = '\[[$symbol$branch]($style)\]'
 
 [git_status]
+# modified = ''
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+staged = '[++\($count\)](green)'
 format = '([\[$all_status$ahead_behind\]]($style))'
+# up_to_date = '✓'
+# conflicted = '🏳'
+# ahead = '🏎💨'
+# behind = '😰'
+# diverged = '😵'
+# up_to_date = '✓'
+# untracked = '🤷'
+# stashed = '📦'
+# modified = '📝'
+# staged = '[++\($count\)](green)'
+# renamed = '👅'
+# deleted = '🗑'
+
+[hostname]
+disabled = false
+ssh_only = false
+format = '[$ssh_symbol](bold blue)[$hostname](bright-purple)'
+# format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+# trim_at = '.companyname.com'
 
 [package]
 disabled = true
@@ -72,9 +119,12 @@ disabled = true
 [memory_usage]
 disabled = false
 threshold = -1
-# symbol = " "
 style = "bold dimmed green"
 format = '\[$symbol[[$ram_pct](bold dimmed blue)([|](dimmed red)[$swap_pct](bold dimmed yellow))]($style)\]'
+# symbol = " "
+
+[nodejs]
+format = '([\[$symbol($version)\]]($style))'
 
 [php]
 version_format = "v${raw}"
@@ -82,8 +132,8 @@ symbol = "🐘 "
 format = '\[[$symbol($version)]($style)\]'
 
 [shell]
-# disabled = false
 format = '\[[$indicator]($style)\]'
+# disabled = false
 
 [status]
 disabled = false
@@ -91,11 +141,18 @@ format = '\[[$symbol$status]($style)\]'
 
 [sudo]
 disabled = false
-style = 'bold green'
 symbol = '🫆 '
+format = '[$symbol]($style)'
+# style = 'bold green'
 # symbol = '👩‍💻 '
 
 [time]
 disabled = false
 style = "bold dimmed blue"
 format = '\[[$time]($style)\]'
+
+[username]
+disabled = false
+show_always = true
+format = '[$user]($style)'
+style_user = 'purple'

@@ -167,7 +167,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # export STARSHIP_CONFIG=~/.config/starship/default.toml
 # export STARSHIP_CONFIG=~/.config/starship/develop.toml
-export STARSHIP_CONFIG=~/.config/starship/playground.toml
+# export STARSHIP_CONFIG=~/.config/starship/playground.toml
 
 export MANPATH="/usr/share/man:/usr/local/share/man:/usr/X11/man:/Library/Apple/usr/share/man:$MANPATH"
 if which brew >/dev/null; then
