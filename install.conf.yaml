@@ -67,7 +67,12 @@
 
 # ZSH: BIN
 - link:
-    ~/bin/fresh-upgrade.zsh: home/bin/fresh-upgrade.zsh
+    ~/bin/action-picker.zsh: home/bin/action-picker.zsh
+    ~/bin/fresh-upgrade.zsh:
+        if: '[ ! `hostname` = BlackBetty.local ]'
+        path: home/bin/fresh-upgrade.zsh
+    ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
+    ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
 
 # ZSH: BIN: FUNCTIONS
 - link:
@@ -149,4 +154,4 @@
 - link:
    ~/etc/mysql/my.cnf: home/etc/mysql/my.cnf
 
-- clean: ['~', '~/bin/functions', '~/.oh-my-zsh/custom', '~/.zsh.d']
+- clean: ['~', '~/bin', '~/bin/functions', '~/.oh-my-zsh/custom', '~/.zsh.d']
