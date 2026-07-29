@@ -1,15 +1,8 @@
 #########################################
-#		oh-my-zsh - custom: 005: aliases
-# version: 1                 2025 Aug 08
-#############################-###########
-# scp .oh-my-zsh/custom/005-aliases.zsh philip@granny:/Users/philip/.oh-my-zsh/custom/005-aliases.zsh
+#		     oh-my-zsh - custom: 060: cmd
+# version: 2                  2026 Jul 29
 #############################-###########
 
-## gtrash
-############
-# export GTRASH_HOME_TRASH_DIR="$HOME/.Trash"
-# alias grm='gtrash put'
-# alias srm='gtrash summary'
-# alias frm='gtrash find'
-# alias rrm='gtrash rm'
-# alias prm='gtrash prune'
+## command
+# XXX
+#####################################################################

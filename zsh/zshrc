@@ -71,6 +71,7 @@ add_to_path $HOME/.cargo/bin
 ########## initialise config variables
 ##################################################
 plugins=()
+export STARSHIP_CONFIG=~/.config/starship/default.toml
 ##################################################
 if [[ -f ~/.zsh.d/$OPT_SOURCE.zsh ]]; then
 	source ~/.zsh.d/$OPT_SOURCE.zsh
@@ -165,10 +166,6 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# export STARSHIP_CONFIG=~/.config/starship/default.toml
-# export STARSHIP_CONFIG=~/.config/starship/develop.toml
-# export STARSHIP_CONFIG=~/.config/starship/playground.toml
-
 export MANPATH="/usr/share/man:/usr/local/share/man:/usr/X11/man:/Library/Apple/usr/share/man:$MANPATH"
 if which brew >/dev/null; then
 	export MANPATH="$HOME/man:$(brew --prefix)/share/man:$MANPATH"
@@ -232,18 +229,6 @@ if [[ -o interactive ]]; then
 		INANE_SHELL_TYPE=2
 	fi
 fi
-
-if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-	# eval "$(clippy completion zsh)"
-	# PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "/Users/philip/Library/Application Support/tea/autocomplete.zsh"
-	export GEMINI_API_KEY="AIzaSyBfcbh4CWayxDJD4WCAzi3DUtJnkAyhe-g"
-
-	if which intelli-shell >/dev/null; then
-		eval "$(intelli-shell init zsh)"
-	fi
-fi
-
-[ ! -f "$HOME/.x-cmd.root/X" ] || . "$HOME/.x-cmd.root/X" # boot up x-cmd.
 
 # export DASHT_DOCSETS_DIR=/Users/philip/Library/Application\ Support/Dash/DocSets/
 

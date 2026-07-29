@@ -90,6 +90,8 @@
    ~/.oh-my-zsh/custom/050-aliases.zsh: ohmyzsh/custom/050-aliases.zsh
    ~/.oh-my-zsh/custom/051-aliases-php.zsh: ohmyzsh/custom/051-aliases-php.zsh
    ~/.oh-my-zsh/custom/051-aliases-suffix.zsh: ohmyzsh/custom/051-aliases-suffix.zsh
+   ~/.oh-my-zsh/custom/051-aliases-directory.zsh: ohmyzsh/custom/051-aliases-directory.zsh
+   ~/.oh-my-zsh/custom/051-aliases-global.zsh: ohmyzsh/custom/051-aliases-global.zsh
    ~/.oh-my-zsh/custom/052-aliases-git.zsh: ohmyzsh/custom/052-aliases-git.zsh
 
 - link:   
@@ -102,6 +104,7 @@
    ~/.oh-my-zsh/custom/061-cmd-folderify.zsh: ohmyzsh/custom/061-cmd-folderify.zsh
    ~/.oh-my-zsh/custom/061-cmd-ghq.zsh: ohmyzsh/custom/061-cmd-ghq.zsh
    ~/.oh-my-zsh/custom/061-cmd-hurl.zsh: ohmyzsh/custom/061-cmd-hurl.zsh
+   ~/.oh-my-zsh/custom/061-cmd-intelli-shell.zsh: ohmyzsh/custom/061-cmd-intelli-shell.zsh
    ~/.oh-my-zsh/custom/061-cmd-iterm.zsh: ohmyzsh/custom/061-cmd-iterm.zsh
    ~/.oh-my-zsh/custom/061-cmd-lla.zsh: ohmyzsh/custom/061-cmd-lla.zsh
    ~/.oh-my-zsh/custom/061-cmd-moor.zsh: ohmyzsh/custom/061-cmd-moor.zsh
@@ -109,7 +112,6 @@
    ~/.oh-my-zsh/custom/061-cmd-pet.zsh: ohmyzsh/custom/061-cmd-pet.zsh
    ~/.oh-my-zsh/custom/061-cmd-sqlite3.zsh: ohmyzsh/custom/061-cmd-sqlite3.zsh
    ~/.oh-my-zsh/custom/061-cmd-todo.zsh: ohmyzsh/custom/061-cmd-todo.zsh
-   ~/.oh-my-zsh/custom/061-cmd-x-cmd.zsh: ohmyzsh/custom/061-cmd-x-cmd.zsh
    ~/.oh-my-zsh/custom/061-cmd-zsh-patina.zsh: ohmyzsh/custom/061-cmd-zsh-patina.zsh
 
 - link:

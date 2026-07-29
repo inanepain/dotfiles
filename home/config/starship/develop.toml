@@ -1,3 +1,8 @@
+############################################################
+########## Starship: develop
+########## version : 1785297886
+############################################################
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -67,6 +72,12 @@ format = '(\[[$path]($style)[$read_only]($read_only_style)\])'
 substitutions = [
   { from = "🏠/Library/Mobile Documents/com~apple~CloudDocs", to = "☁️ " },
   { from = "🏠/Sites", to = "🌍" },
+  # { from = "🏠/Sites/inane-fw", to = "~inanefw" },
+  { from = "🏠/Developer", to = "~develop" },
+  { from = "~develop/Repositories", to = "~repos" },
+  { from = "🏠/ghq", to = "~repo" },
+  { from = "🏠/tmp", to = "~tmp" },
+  { from = "🏠/Temp", to = "~temp" },
 #   { from = "^/", to = "<root>/", regex = true },
 #   { from = "^<root>", to = "/", regex = true },
 ]
