@@ -1,9 +1,39 @@
 = dot files
-:description: Sync files between installations.
+:description: Sync files between installations using anishathalye/dotbot.
 
 {description}
 
-== oh-my-zsh: plugins
+== installing
+
+=== dotbot
+
+On a mac use `brew`.
+
+If whatever package manager on target system hasn't got dotbot.
+
+Install using `uv`.
+
+=== configuration files
+
+clone this repository.
+
+== dependencies
+
+Packages that should be installed.
+
+- just (install omz plugins - pretty sure dotbot can handle this but...)
+
+Depending on the target environment, additional requirements might be needed.
+
+- sd
+
+== just
+
+=== omz: plugins
+
+```shell
+just omz-clone-default
+```
 
 - autoupdate
 - forgit
@@ -13,3 +43,17 @@
 === zsh-patina
 
 Installed using `brew` on a Mac or `cargo` on linux or wsl.
+
+NOTE: I really should move this into `just`.
+
+== home/zsh.d
+
+Store host specific configuration "plugins".
+
+{OPT_SOURCE}.zsh:
+
+Included start of `.zshrc` and is mainly used for custom `omz` plugins.
+
+{OPT_SOURCE}.zshrc:
+
+Included right at the end of `.zshrc`.
