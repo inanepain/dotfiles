@@ -50,6 +50,12 @@
    ~/.zsh.d/blackbetty.zshrc:
       if: '[ `hostname` = BlackBetty.local ]'
       path: home/zsh.d/blackbetty.zshrc
+   ~/.zsh.d/kycdd.dev.zsh:
+      if: '[ `hostname` = kycdd.dev ]'
+      path: home/zsh.d/kycdd.dev.zsh
+   ~/.zsh.d/kycdd.dev.zshrc:
+      if: '[ `hostname` = kycdd.dev ]'
+      path: home/zsh.d/kycdd.dev.zshrc
    ~/.zsh.d/kycx.zsh:
       if: '[ `hostname` = kycx ]'
       path: home/zsh.d/kycx.zsh
