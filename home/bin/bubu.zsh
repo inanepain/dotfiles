@@ -2,4 +2,4 @@
 
 source ~/bin/functions/colours
 
-brew update && brew upgrade
+brew update && brew upgrade -y
