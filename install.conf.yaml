@@ -81,6 +81,9 @@
         path: home/bin/fresh-upgrade.zsh
     ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
     ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
+    ~/bin/kitty-installer.sh:
+        if: '[ `hostname` = BlackBetty.local ]'
+        path: home/bin/kitty-installer.sh
 
 # ZSH: BIN: FUNCTIONS
 - link:
