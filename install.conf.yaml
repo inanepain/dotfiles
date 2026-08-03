@@ -45,22 +45,25 @@
 # ZSH: CONFIG
 - link:
    ~/.zsh.d/blackbetty.zsh:
-      if: '[ `hostname` = BlackBetty.local ]'
+      if: '[ `uname -n` = BlackBetty.local ]'
       path: home/zsh.d/blackbetty.zsh
    ~/.zsh.d/blackbetty.zshrc:
-      if: '[ `hostname` = BlackBetty.local ]'
+      if: '[ `uname -n` = BlackBetty.local ]'
       path: home/zsh.d/blackbetty.zshrc
+   ~/.zsh.d/kycdd-003.zsh:
+      if: '[ `uname -n` = kycdd-003 ]'
+      path: home/zsh.d/kycdd-003.zsh
    ~/.zsh.d/kycdd.dev.zsh:
-      if: '[ `hostname` = kycdd.dev ]'
+      if: '[ `uname -n` = kycdd.dev ]'
       path: home/zsh.d/kycdd.dev.zsh
    ~/.zsh.d/kycdd.dev.zshrc:
-      if: '[ `hostname` = kycdd.dev ]'
+      if: '[ `uname -n` = kycdd.dev ]'
       path: home/zsh.d/kycdd.dev.zshrc
    ~/.zsh.d/kycx.zsh:
-      if: '[ `hostname` = kycx ]'
+      if: '[ `uname -n` = kycx ]'
       path: home/zsh.d/kycx.zsh
    ~/.zsh.d/kycx.zshrc:
-      if: '[ `hostname` = kycx ]'
+      if: '[ `uname -n` = kycx ]'
       path: home/zsh.d/kycx.zshrc
 
 # ZSH: CORE
@@ -77,12 +80,12 @@
     ~/bin/bubu.zsh: home/bin/bubu.zsh
     ~/bin/ckhash.zsh: home/bin/ckhash.zsh
     ~/bin/fresh-upgrade.zsh:
-        if: '[ ! `hostname` = BlackBetty.local ]'
+        if: '[ ! `uname -n` = BlackBetty.local ]'
         path: home/bin/fresh-upgrade.zsh
     ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
     ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
     ~/bin/kitty-installer.sh:
-        if: '[ `hostname` = BlackBetty.local ]'
+        if: '[ `uname -n` = BlackBetty.local ]'
         path: home/bin/kitty-installer.sh
 
 # ZSH: BIN: FUNCTIONS
@@ -99,7 +102,7 @@
    ~/.oh-my-zsh/custom/002-app.zsh: ohmyzsh/custom/002-app.zsh
    ~/.oh-my-zsh/custom/007-env-eza.zsh: ohmyzsh/custom/007-env-eza.zsh
    ~/.oh-my-zsh/custom/010-java.zsh:
-     if: '[ ! `hostname` = kycu ]'
+     if: '[ ! `uname -n` = kycu ]'
      path: ohmyzsh/custom/010-java.zsh
 
 - link:
@@ -107,7 +110,7 @@
    ~/.oh-my-zsh/custom/051-aliases-php.zsh: ohmyzsh/custom/051-aliases-php.zsh
    ~/.oh-my-zsh/custom/051-aliases-suffix.zsh: ohmyzsh/custom/051-aliases-suffix.zsh
    ~/.oh-my-zsh/custom/051-aliases-directory.zsh:
-     if: '[ `hostname` = BlackBetty.local ]'
+     if: '[ `uname -n` = BlackBetty.local ]'
      path: ohmyzsh/custom/051-aliases-directory.zsh
    ~/.oh-my-zsh/custom/051-aliases-global.zsh: ohmyzsh/custom/051-aliases-global.zsh
    ~/.oh-my-zsh/custom/052-aliases-git.zsh: ohmyzsh/custom/052-aliases-git.zsh
@@ -115,7 +118,7 @@
 - link:   
    ~/.oh-my-zsh/custom/060-cmd.zsh: ohmyzsh/custom/060-cmd.zsh
    ~/.oh-my-zsh/custom/061-cmd-atuin.zsh: 
-     if: '[ ! `hostname` = kycu  ]'
+     if: '[ ! `uname -n` = kycu  ]'
      path: ohmyzsh/custom/061-cmd-atuin.zsh
    ~/.oh-my-zsh/custom/061-cmd-boring.zsh: ohmyzsh/custom/061-cmd-boring.zsh
    ~/.oh-my-zsh/custom/061-cmd-broot.zsh: ohmyzsh/custom/061-cmd-broot.zsh
