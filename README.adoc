@@ -50,10 +50,14 @@ NOTE: I really should move this into `just`.
 
 Store host specific configuration "plugins".
 
+{OPT_SOURCE}.env:
+
+* Included right at the start of `.zshrc`, after functions. Add any custom environment settings need.
+
 {OPT_SOURCE}.zsh:
 
-Included start of `.zshrc` and is mainly used for custom `omz` plugins.
+* Included start of `.zshrc` and is mainly used for custom `omz` plugins.
 
 {OPT_SOURCE}.zshrc:
 
-Included right at the end of `.zshrc`.
+* Included right at the end of `.zshrc`.
