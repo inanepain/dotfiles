@@ -7,5 +7,7 @@ compctl -/g 'queues/*.txt' gallery-tool.sh
 test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
 
 if which brew >/dev/null; then
-    source "$(brew --prefix)/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
+    if [[ -f "$(brew --prefix)/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh" ]]; then
+		source "$(brew --prefix)/opt/fzf-tab/share/fzf-tab/fzf-tab.zsh"
+	fi
 fi
