@@ -53,6 +53,9 @@
    ~/.zsh.d/kycdd-003.zsh:
       if: '[ `uname -n` = kycdd-003 ]'
       path: home/zsh.d/kycdd-003.zsh
+   ~/.zsh.d/kycdd.dev.env:
+      if: '[ `uname -n` = kycdd.dev ]'
+      path: home/zsh.d/kycdd.dev.env
    ~/.zsh.d/kycdd.dev.zsh:
       if: '[ `uname -n` = kycdd.dev ]'
       path: home/zsh.d/kycdd.dev.zsh
