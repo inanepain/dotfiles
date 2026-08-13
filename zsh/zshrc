@@ -45,6 +45,11 @@ function hasSoftware() {
 	fi
 }
 
+if [[ -f ~/.zsh.d/$OPT_SOURCE.env ]]; then
+	source ~/.zsh.d/$OPT_SOURCE.env
+fi
+
+
 # Lines configured by zsh-newuser-install
 setopt autocd extendedglob
 unsetopt nomatch
