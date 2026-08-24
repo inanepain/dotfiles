@@ -6,7 +6,7 @@
 ## command
 # lla
 #####################################################################
-if which lla >/dev/null; then
+if hasSoftware "lla"; then
   # alias ls='\lla'
   # alias l='ls -l'
   # alias lS='ls -S'

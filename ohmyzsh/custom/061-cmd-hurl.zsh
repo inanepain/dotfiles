@@ -6,6 +6,6 @@
 ## command
 # hurl
 #####################################################################
-if which hurl >/dev/null; then
+if hasSoftware "hurl"; then
   compctl -/g '*.http' hurl
 fi

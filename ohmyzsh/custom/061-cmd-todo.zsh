@@ -9,11 +9,11 @@
 export TODOTXT_DEFAULT_ACTION=ls
 export TODOTXT_SORT_COMMAND='env LC_COLLATE=C sort -k 2,2 -k 1,1n'
 
-if which pter >/dev/null; then
+if hasSoftware "pter"; then
     alias todo.ui="pter ~/Documents/ToDo/todo.txt"
 fi
 
-if which topydo >/dev/null; then
+if hasSoftware "topydo"; then
     alias topydo="topydo -t /Users/philip/Documents/ToDo/todo.txt"
 fi
 

@@ -6,6 +6,6 @@
 ## command
 # broot
 #####################################################################
-if which broot >/dev/null; then
+if hasSoftware "broot"; then
     source /Users/philip/.config/broot/launcher/bash/br
 fi

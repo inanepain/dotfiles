@@ -6,6 +6,6 @@
 ## command
 # boring
 #####################################################################
-if which boring >/dev/null; then
+if hasSoftware "boring"; then
   source <(boring --shell zsh)
 fi

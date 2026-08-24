@@ -6,6 +6,6 @@
 ## command
 # folderify
 #####################################################################
-if which folderify >/dev/null; then
+if hasSoftware "folderify"; then
   source <(folderify --completions zsh)
 fi

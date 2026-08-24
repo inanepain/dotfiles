@@ -5,6 +5,6 @@
 
 ## moor
 #####################################################################
-if which moor >/dev/null; then
+if hasSoftware "moor"; then
     export PAGER="$(brew --prefix)/bin/moor"
 fi

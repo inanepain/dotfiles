@@ -6,7 +6,7 @@
 ## command
 # zsh-patina
 #####################################################################
-if which brew >/dev/null; then
+if hasSoftware "brew"; then
 	if [[ -f $(brew --prefix)/opt/zsh-patina/bin/zsh-patina ]]; then
 		eval "$($(brew --prefix)/opt/zsh-patina/bin/zsh-patina activate)"
 	fi

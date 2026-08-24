@@ -44,6 +44,9 @@
 #region ZSH
 # ZSH: CONFIG
 - link:
+   ~/.zsh.d/blackbetty.env:
+      if: '[ `uname -n` = BlackBetty.local ]'
+      path: home/zsh.d/blackbetty.env
    ~/.zsh.d/blackbetty.zsh:
       if: '[ `uname -n` = BlackBetty.local ]'
       path: home/zsh.d/blackbetty.zsh

@@ -6,7 +6,7 @@
 ## command
 # ghq
 #####################################################################
-if which ghq >/dev/null; then
+if hasSoftware "ghq"; then
     # list ghq repositories and cd to selected one
 	function ghq-cd() {
 		local repo=$(ghq list | fzf)

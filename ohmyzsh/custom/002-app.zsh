@@ -20,5 +20,4 @@ export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 ## araxis
 # add to path
 #####################################################################
-# add_to_path $HOME/Applications/Araxis\ Merge.app/Contents/Utilities/
-add_to_path /Applications/Araxis\ Merge.app/Contents/Utilities/
+addToPathAndClean /Applications/Araxis\ Merge.app/Contents/Utilities/

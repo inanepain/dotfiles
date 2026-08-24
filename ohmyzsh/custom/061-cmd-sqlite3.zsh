@@ -6,6 +6,6 @@
 ## command
 # sqlite3
 #####################################################################
-if which sqlite3 >/dev/null; then
+if hasSoftware "sqlite3"; then
     alias sqlite3="sqlite3 -unsafe-testing -init ~/lib/sqlite/init.sql"
 fi

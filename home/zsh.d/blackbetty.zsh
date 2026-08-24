@@ -9,4 +9,4 @@ if [[ ! $TERMINAL_EMULATOR = "JetBrains-JediTerm" ]]; then
 	plugins+=($plugins starship)
 fi
 
-add_to_path ~/bin/short-term
+addToPathAndClean ~/bin/short-term

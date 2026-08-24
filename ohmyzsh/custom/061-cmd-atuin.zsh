@@ -6,6 +6,6 @@
 ## command
 # atuin
 #####################################################################
-if which atuin >/dev/null; then
+if hasSoftware "atuin"; then
   eval "$(atuin init zsh)"
 fi

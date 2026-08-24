@@ -6,7 +6,7 @@
 ## command
 # pet
 #####################################################################
-if which pet >/dev/null; then
+if hasSoftware "pet"; then
 	# export FZF_CTRL_R_OPTS="
 	# 	--reverse
 	# 	--cycle

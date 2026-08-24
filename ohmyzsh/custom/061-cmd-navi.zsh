@@ -6,6 +6,6 @@
 ## command
 # navi
 #####################################################################
-if which navi >/dev/null; then
+if hasSoftware "navi"; then
   eval "$(navi widget zsh)"
 fi
