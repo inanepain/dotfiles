@@ -42,6 +42,12 @@
 #endregion CREATE
 
 #region ZSH
+# ZSH: INCLUDE
+- link:
+   ~/.zsh.d/include/:
+      glob: true
+      path: home/zsh.d/include/*
+
 # ZSH: CONFIG
 - link:
    ~/.zsh.d/blackbetty.env:

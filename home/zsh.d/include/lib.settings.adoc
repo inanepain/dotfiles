@@ -1,0 +1,107 @@
+= ZSH: Library: Settings
+:author: Philip Michael Raab
+:email: peep@inane.co.za
+:description: Library for ZSH to read and write settings using a JSON file.
+:revnumber: 1
+:revdate: 2026-08-25
+:revremark: Initial
+:sectnums: |,all|
+// :source-highlighter: highlight.js
+// :source-highlighter: rouge
+// :source-highlighter: coderay
+:source-highlighter: pygments
+:toc: left
+
+{description}
+
+== Functions
+
+* settings::read
+* settings::write
+* settings::get
+* settings::set
+* settings::has
+* settings::reset
+* settings::reset_all
+* settings::init
+
+=== settings::read
+
+Read settings.
+
+=== settings::write
+
+Write settings.
+
+=== settings::get
+
+Get setting.
+
+* param1: key
+* param2: default
+
+=== settings::set
+
+Set setting.
+
+* param1: key
+* param2: value
+
+=== settings::has
+
+Check setting.
+
+* param1: key
+
+=== settings::reset
+
+Reset setting.
+
+* param1: key
+
+=== settings::reset::all
+
+Reset all settings.
+
+=== settings::init
+
+Initialise. Calls `settings::reset::all` then `settings::read`.
+
+== Example
+
+[source,shell]
+----
+#!/usr/bin/env zsh
+
+source ~/.zsh.d/include/lib.settings.zsh
+
+# define your default settings.
+settings_defaults=(
+    [username]="Bob"
+    [password]="Pin"
+)
+
+# set the save file for the settings.
+typeset settings_file="$XDG_CONFIG_HOME/example/settings.example.json"
+
+# initialise the local settings array.
+settings::init
+
+# work with the settings
+settings::set "username" "K1ng"
+settings::set "password" "P!n"
+
+settings::get "username"
+settings::get "password"
+
+echo $settings[username]
+echo $settings[password]
+
+username=$settings[username]
+password=$settings[password]
+echo $username
+echo $password
+
+# save the settings back to the file.
+settings::write
+----
