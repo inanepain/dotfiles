@@ -20,8 +20,8 @@ autoload ~/bin/functions/ask
 
 # ====================================================================
 
-giteaOld=1.26.4
-giteaNew=1.27.0
+giteaOld=1.27.1
+giteaNew=1.27.2
 # dbHost=db.cathedral.co.za
 dbHost=localhost
 # dbPwd=A3xs7gjfL3UCHi8gEY2R

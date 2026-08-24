@@ -8,3 +8,5 @@ plugins+=($plugins autoupdate brew composer copybuffer dash direnv extract eza f
 if [[ ! $TERMINAL_EMULATOR = "JetBrains-JediTerm" ]]; then
 	plugins+=($plugins starship)
 fi
+
+add_to_path ~/bin/short-term
