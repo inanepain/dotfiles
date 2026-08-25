@@ -59,6 +59,9 @@
    ~/.zsh.d/blackbetty.zshrc:
       if: '[ `uname -n` = BlackBetty.local ]'
       path: home/zsh.d/blackbetty.zshrc
+   ~/.zsh.d/kycdd-003.env:
+      if: '[ `uname -n` = kycdd-003 ]'
+      path: home/zsh.d/kycdd-003.env
    ~/.zsh.d/kycdd-003.zsh:
       if: '[ `uname -n` = kycdd-003 ]'
       path: home/zsh.d/kycdd-003.zsh
