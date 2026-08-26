@@ -48,32 +48,29 @@
       glob: true
       path: home/zsh.d/include/*
 
+# ZSH: CONFIG BlackBetty.local
+- link:
+   ~/.zsh.d/:
+      if: '[ `uname -n` = BlackBetty.local ]'
+      glob: true
+      path: home/zsh.d/blackbetty.*
+
+# ZSH: CONFIG kycdd-003
+- link:
+   ~/.zsh.d/:
+      if: '[ `uname -n` = kycdd-003 ]'
+      glob: true
+      path: home/zsh.d/kycdd-003.*
+
+# ZSH: CONFIG kycdd.dev
+- link:
+   ~/.zsh.d/:
+      if: '[ `uname -n` = kycdd.dev ]'
+      glob: true
+      path: home/zsh.d/kycdd.dev.*
+
 # ZSH: CONFIG
 - link:
-   ~/.zsh.d/blackbetty.env:
-      if: '[ `uname -n` = BlackBetty.local ]'
-      path: home/zsh.d/blackbetty.env
-   ~/.zsh.d/blackbetty.zsh:
-      if: '[ `uname -n` = BlackBetty.local ]'
-      path: home/zsh.d/blackbetty.zsh
-   ~/.zsh.d/blackbetty.zshrc:
-      if: '[ `uname -n` = BlackBetty.local ]'
-      path: home/zsh.d/blackbetty.zshrc
-   ~/.zsh.d/kycdd-003.env:
-      if: '[ `uname -n` = kycdd-003 ]'
-      path: home/zsh.d/kycdd-003.env
-   ~/.zsh.d/kycdd-003.zsh:
-      if: '[ `uname -n` = kycdd-003 ]'
-      path: home/zsh.d/kycdd-003.zsh
-   ~/.zsh.d/kycdd.dev.env:
-      if: '[ `uname -n` = kycdd.dev ]'
-      path: home/zsh.d/kycdd.dev.env
-   ~/.zsh.d/kycdd.dev.zsh:
-      if: '[ `uname -n` = kycdd.dev ]'
-      path: home/zsh.d/kycdd.dev.zsh
-   ~/.zsh.d/kycdd.dev.zshrc:
-      if: '[ `uname -n` = kycdd.dev ]'
-      path: home/zsh.d/kycdd.dev.zshrc
    ~/.zsh.d/kycx.zsh:
       if: '[ `uname -n` = kycx ]'
       path: home/zsh.d/kycx.zsh
@@ -94,6 +91,7 @@
     ~/bin/action-picker.zsh: home/bin/action-picker.zsh
     ~/bin/bubu.zsh: home/bin/bubu.zsh
     ~/bin/ckhash.zsh: home/bin/ckhash.zsh
+    ~/bin/dir2dmg.zsh: home/bin/dir2dmg.zsh
     ~/bin/fresh-upgrade.zsh:
         if: '[ ! `uname -n` = BlackBetty.local ]'
         path: home/bin/fresh-upgrade.zsh
@@ -133,8 +131,8 @@
 - link:   
    ~/.oh-my-zsh/custom/060-cmd.zsh: ohmyzsh/custom/060-cmd.zsh
    ~/.oh-my-zsh/custom/061-cmd-atuin.zsh: 
-     if: '[ ! `uname -n` = kycu  ]'
-     path: ohmyzsh/custom/061-cmd-atuin.zsh
+      if: '[ ! `uname -n` = kycu  ]'
+      path: ohmyzsh/custom/061-cmd-atuin.zsh
    ~/.oh-my-zsh/custom/061-cmd-boring.zsh: ohmyzsh/custom/061-cmd-boring.zsh
    ~/.oh-my-zsh/custom/061-cmd-broot.zsh: ohmyzsh/custom/061-cmd-broot.zsh
    ~/.oh-my-zsh/custom/061-cmd-folderify.zsh: ohmyzsh/custom/061-cmd-folderify.zsh
@@ -145,6 +143,7 @@
    ~/.oh-my-zsh/custom/061-cmd-lla.zsh: ohmyzsh/custom/061-cmd-lla.zsh
    ~/.oh-my-zsh/custom/061-cmd-moor.zsh: ohmyzsh/custom/061-cmd-moor.zsh
    ~/.oh-my-zsh/custom/061-cmd-navi.zsh: ohmyzsh/custom/061-cmd-navi.zsh
+   ~/.oh-my-zsh/custom/061-cmd-nvm.zsh: ohmyzsh/custom/061-cmd-nvm.zsh
    ~/.oh-my-zsh/custom/061-cmd-pet.zsh: ohmyzsh/custom/061-cmd-pet.zsh
    ~/.oh-my-zsh/custom/061-cmd-sqlite3.zsh: ohmyzsh/custom/061-cmd-sqlite3.zsh
    ~/.oh-my-zsh/custom/061-cmd-todo.zsh: ohmyzsh/custom/061-cmd-todo.zsh

@@ -235,10 +235,10 @@ export VISUAL="$EDITOR"
 export ARCHFLAGS="-arch $(uname -m)"
 
 if hasSoftware "brew"; then
-	addToPathAndClean $HOMEBREW_PREFIX/opt/sqlite/bin "before"
+	addToPathAndClean "$HOMEBREW_PREFIX/opt/sqlite/bin" "before"
 	addToPathAndClean "$HOMEBREW_PREFIX/opt/ruby/bin" "before"
-	addToPathAndClean $HOMEBREW_PREFIX/bin "before"
-	addToPathAndClean $HOMEBREW_PREFIX/sbin "before"
+	addToPathAndClean "$HOMEBREW_PREFIX/bin" "before"
+	addToPathAndClean "$HOMEBREW_PREFIX/sbin" "before"
 fi
 
 # INANE
