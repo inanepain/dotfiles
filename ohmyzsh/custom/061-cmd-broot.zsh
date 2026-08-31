@@ -7,5 +7,5 @@
 # broot
 #####################################################################
 if hasSoftware "broot"; then
-    source /Users/philip/.config/broot/launcher/bash/br
+    source ~/.config/broot/launcher/bash/br
 fi
