@@ -166,6 +166,9 @@
     ~/.config/atuin:
         glob: true
         path: home/config/atuin/*
+    ~/.config/broot:
+        glob: true
+        path: home/config/broot/*
     ~/.config/direnv:
         glob: true
         path: home/config/direnv/*
