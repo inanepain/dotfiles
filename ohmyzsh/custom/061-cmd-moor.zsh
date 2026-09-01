@@ -6,5 +6,5 @@
 ## moor
 #####################################################################
 if hasSoftware "moor"; then
-    export PAGER="$(brew --prefix)/bin/moor"
+    export PAGER="$HOMEBREW_PREFIX/bin/moor"
 fi
