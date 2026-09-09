@@ -28,6 +28,13 @@
     - ~/etc
     - ~/etc/oh-my-zsh
 
+# DEVELOPMENT & CODE & TEMP
+- create:
+    - ~/Developer
+    - ~/Projects
+    - ~/Sites
+    - ~/Temp
+
 # MAN
 - create:
     - ~/man
@@ -61,6 +68,13 @@
       if: '[ `uname -n` = kycdd-003 ]'
       glob: true
       path: home/zsh.d/kycdd-003.*
+
+# ZSH: CONFIG kycdd-003a.local
+- link:
+   ~/.zsh.d/:
+      if: '[ `uname -n` = kycdd-003a.local ]'
+      glob: true
+      path: home/zsh.d/kycdd-003a.*
 
 # ZSH: CONFIG kycdd.dev
 - link:
