@@ -98,3 +98,9 @@ omz-update-plugins: (_start "OMZ: plugins: updating...") && (_done "OMZ: plugins
     for f in */.git/config; do echo "\t$(dirname $(dirname $f))"; cd $(dirname $f); cd ..; git pull; cd ..; done
 
 #endregion OH MY ZSH PLUGINS
+
+#region INSTALL SOFTWARE
+# Install common software with brew
+[group: 'brew']
+brew-install
+#endregion INSTALL SOFTWARE
