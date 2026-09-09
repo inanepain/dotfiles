@@ -9,9 +9,7 @@
     ~/.local:
        mode: 0754
     ~/.local/share:
-       mode: 0754
     ~/.local/state:
-       mode: 0754
     ~/.config:
        mode: 0754
     ~/.cache:
@@ -27,7 +25,6 @@
     ~/bin:
        mode: 0755
     ~/bin/functions:
-       mode: 0755
 
 # OTHER
 - create:
@@ -38,7 +35,6 @@
     ~/etc:
        mode: 0755
     ~/etc/oh-my-zsh:
-       mode: 0755
 
 # DEVELOPMENT & CODE & TEMP
 - create:
@@ -58,21 +54,13 @@
     ~/man:
        mode: 0755
     ~/man/man1:
-       mode: 0755
     ~/man/man2:
-       mode: 0755
     ~/man/man3:
-       mode: 0755
     ~/man/man4:
-       mode: 0755
     ~/man/man5:
-       mode: 0755
     ~/man/man6:
-       mode: 0755
     ~/man/man7:
-       mode: 0755
     ~/man/man8:
-       mode: 0755
 #endregion CREATE
 
 #region ZSH
