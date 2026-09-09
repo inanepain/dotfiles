@@ -102,7 +102,7 @@ omz-update-plugins: (_start "OMZ: plugins: updating...") && (_done "OMZ: plugins
 #region INSTALL SOFTWARE
 # Install common software with brew
 [group: 'brew']
-brew-install: (_start "brew: install: all") && (_done "brew: install: all")
+brew-install bundle="all": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
     #!/usr/bin/env zsh
     brew-
 
