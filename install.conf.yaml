@@ -6,46 +6,73 @@
 #region CREATE
 # XDG
 - create:
-    - ~/.local
-    - ~/.local/share
-    - ~/.local/state
-    - ~/.config
-    - ~/.cache
+    ~/.local:
+       mode: 0754
+    ~/.local/share:
+       mode: 0754
+    ~/.local/state:
+       mode: 0754
+    ~/.config:
+       mode: 0754
+    ~/.cache:
+       mode: 0754
 
 # ZSH
 - create:
-    - ~/.zsh.d
+    ~/.zsh.d:
+       mode: 0754
 
 # BIN
 - create:
-    - ~/bin
-    - ~/bin/functions
+    ~/bin:
+       mode: 0755
+    ~/bin/functions:
+       mode: 0755
 
 # OTHER
 - create:
-    - ~/doc
-    - ~/lib
-    - ~/etc
-    - ~/etc/oh-my-zsh
+    ~/doc:
+       mode: 0755
+    ~/lib:
+       mode: 0755
+    ~/etc:
+       mode: 0755
+    ~/etc/oh-my-zsh:
+       mode: 0755
 
 # DEVELOPMENT & CODE & TEMP
 - create:
-    - ~/Developer
-    - ~/Projects
-    - ~/Sites
-    - ~/Temp
+    ~/Developer:
+       mode: 0755
+    ~/Projects:
+       mode: 0755
+    ~/Sites:
+       mode: 0755
+    ~/Temp:
+       mode: 0755
+    ~/zzz:
+       mode: 0755
 
 # MAN
 - create:
-    - ~/man
-    - ~/man/man1
-    - ~/man/man2
-    - ~/man/man3
-    - ~/man/man4
-    - ~/man/man5
-    - ~/man/man6
-    - ~/man/man7
-    - ~/man/man8
+    ~/man:
+       mode: 0755
+    ~/man/man1:
+       mode: 0755
+    ~/man/man2:
+       mode: 0755
+    ~/man/man3:
+       mode: 0755
+    ~/man/man4:
+       mode: 0755
+    ~/man/man5:
+       mode: 0755
+    ~/man/man6:
+       mode: 0755
+    ~/man/man7:
+       mode: 0755
+    ~/man/man8:
+       mode: 0755
 #endregion CREATE
 
 #region ZSH
@@ -138,7 +165,7 @@
    ~/.oh-my-zsh/custom/051-aliases-php.zsh: ohmyzsh/custom/051-aliases-php.zsh
    ~/.oh-my-zsh/custom/051-aliases-suffix.zsh: ohmyzsh/custom/051-aliases-suffix.zsh
    ~/.oh-my-zsh/custom/051-aliases-directory.zsh:
-     if: '[ `uname -n` = BlackBetty.local ]'
+     if: '[ `uname` = Darwin ]'
      path: ohmyzsh/custom/051-aliases-directory.zsh
    ~/.oh-my-zsh/custom/051-aliases-global.zsh: ohmyzsh/custom/051-aliases-global.zsh
    ~/.oh-my-zsh/custom/052-aliases-git.zsh: ohmyzsh/custom/052-aliases-git.zsh
@@ -200,4 +227,11 @@
 - link:
    ~/etc/mysql/my.cnf: home/etc/mysql/my.cnf
 
-- clean: ['~', '~/bin', '~/bin/functions', '~/.oh-my-zsh/custom', '~/.zsh.d']
+- clean:
+   ~/:
+   ~/bin:
+      recursive: true
+   ~/.oh-my-zsh:
+      recursive: true
+   ~/.zsh.d:
+      recursive: true

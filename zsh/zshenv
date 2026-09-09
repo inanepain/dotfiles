@@ -27,6 +27,5 @@ fi
 
 
 # FUNCTION AUTOLOADING
-fpath=(~/bin/functions $fpath)
-# autoload ${fpath[1]}/*(:t)
-autoload -Uz "${fpath[1]}"/*(:t)
+# fpath=("$HOME/bin/function/" $fpath)
+# autoload -Uz $HOME/bin/functions/*(-.:t)

@@ -220,6 +220,11 @@ fi
 plugins+=($plugins aliases alias-finder copyfile copypath fzf git sudo z)
 source $ZSH/oh-my-zsh.sh
 
+# FUNCTION AUTOLOADING
+fpath=("$HOME/bin/functions" $fpath)
+fpath=(${(u)fpath})
+autoload -Uz $HOME/bin/functions/*(-.:t)
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -270,3 +275,6 @@ fi
 ################################################
 
 export PATH
+
+
+
