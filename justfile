@@ -100,10 +100,16 @@ omz-update-plugins: (_start "OMZ: plugins: updating...") && (_done "OMZ: plugins
 #endregion OH MY ZSH PLUGINS
 
 #region INSTALL SOFTWARE
-# Install common software with brew
+# Install: brew: zsh-patina
 [group: 'brew']
-brew-install bundle="all": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
+brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
     #!/usr/bin/env zsh
-    brew install
+    brew install zsh-patina
+
+# Install: brew: zsh-patina
+[group: 'brew']
+brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
+    #!/usr/bin/env zsh
+    brew install {{bundle}}
 
 #endregion INSTALL SOFTWARE
