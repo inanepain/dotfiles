@@ -27,12 +27,6 @@ fi
 
 
 # FUNCTION AUTOLOADING
-# ~/.zshrc
-fpath=("$HOME/bin/functions" $fpath)
-autoload -Uz $HOME/bin/functions/*(-.:t)
+# fpath=("$HOME/bin/function/" $fpath)
+# autoload -Uz $HOME/bin/functions/*(-.:t)
 
-# fpath=(${(u)fpath})
-# fpath=(~/bin/functions $fpath)
-# autoload $HOME/bin/functions/*(:t)
-# autoload "${fpath[1]}"/*(:t)
-# autoload -Uz "${fpath[1]}"/*(:t)

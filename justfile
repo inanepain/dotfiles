@@ -98,3 +98,18 @@ omz-update-plugins: (_start "OMZ: plugins: updating...") && (_done "OMZ: plugins
     for f in */.git/config; do echo "\t$(dirname $(dirname $f))"; cd $(dirname $f); cd ..; git pull; cd ..; done
 
 #endregion OH MY ZSH PLUGINS
+
+#region INSTALL SOFTWARE
+# Install: brew: zsh-patina
+[group: 'brew']
+brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
+    #!/usr/bin/env zsh
+    brew install zsh-patina
+
+# Install: brew: zsh-patina
+[group: 'brew']
+brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
+    #!/usr/bin/env zsh
+    brew install {{bundle}}
+
+#endregion INSTALL SOFTWARE
