@@ -1,6 +1,9 @@
 #########################################
 #				FUNCTIONS: Start
 #########################################
+# source ~/.zsh.d\include\lib.settings.zsh
+#----------------------------------------
+
 fpath=("$HOME/bin/functions" $fpath)
 autoload -Uz $HOME/bin/functions/*(-.:t)
 
@@ -72,6 +75,9 @@ function addToPathAndClean() {
 zstyle ':inane:function:*' 'error' yes
 zstyle ':inane:function:*' 'success' yes
 ################################################
+if [[ -f ~/.zsh.d/local.env ]]; then
+	source ~/.zsh.d/local.env
+fi
 if [[ -f ~/.zsh.d/$OPT_SOURCE.env ]]; then
 	source ~/.zsh.d/$OPT_SOURCE.env
 fi
@@ -103,6 +109,9 @@ addToPathAndClean "$HOME/.cargo/bin"
 plugins=()
 export STARSHIP_CONFIG=~/.config/starship/default.toml
 ################################################
+if [[ -f ~/.zsh.d/local.zsh ]]; then
+	source ~/.zsh.d/local.zsh
+fi
 if [[ -f ~/.zsh.d/$OPT_SOURCE.zsh ]]; then
 	source ~/.zsh.d/$OPT_SOURCE.zsh
 fi

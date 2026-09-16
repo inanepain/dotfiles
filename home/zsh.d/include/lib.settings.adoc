@@ -6,10 +6,14 @@
 :revdate: 2026-08-25
 :revremark: Initial
 :sectnums: |,all|
+:experimental: true
+// :stylesdir: C:/Users/PhilipRaab/.AsciidocFX-1.8.10/css
+// :stylesheet: asciidoctor-default.css
+// :stylesheet: asciidoctor-default-overrides.css
 // :source-highlighter: highlight.js
-// :source-highlighter: rouge
+:source-highlighter: rouge
 // :source-highlighter: coderay
-:source-highlighter: pygments
+// :source-highlighter: pygments
 :toc: left
 
 {description}
@@ -69,6 +73,9 @@ Initialise. Calls `settings::reset::all` then `settings::read`.
 
 == Example
 
+.Simple Example
+[%collapsible]
+====
 [source,shell]
 ----
 #!/usr/bin/env zsh
@@ -105,3 +112,4 @@ echo $password
 # save the settings back to the file.
 settings::write
 ----
+====
