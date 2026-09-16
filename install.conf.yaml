@@ -46,8 +46,6 @@
        mode: 0755
     ~/Temp:
        mode: 0755
-    ~/zzz:
-       mode: 0755
 
 # MAN
 - create:
@@ -69,6 +67,10 @@
    ~/.zsh.d/include/:
       glob: true
       path: home/zsh.d/include/*
+      
+   ~/.zsh.d/:
+      glob: true
+      path: home/zsh.d/*.dist
 
 # ZSH: CONFIG BlackBetty.local
 - link:
