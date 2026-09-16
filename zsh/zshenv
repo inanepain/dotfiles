@@ -29,3 +29,4 @@ fi
 # FUNCTION AUTOLOADING
 # fpath=("$HOME/bin/function/" $fpath)
 # autoload -Uz $HOME/bin/functions/*(-.:t)
+
