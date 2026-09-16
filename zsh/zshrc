@@ -1,6 +1,9 @@
 #########################################
 #				FUNCTIONS: Start
 #########################################
+fpath=("$HOME/bin/functions" $fpath)
+autoload -Uz $HOME/bin/functions/*(-.:t)
+
 # Check if path is found then appends it to the path
 # - use before as argument two to prepend it to the path
 function add_to_path() {
