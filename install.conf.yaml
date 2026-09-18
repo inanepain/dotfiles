@@ -61,6 +61,13 @@
     ~/man/man8:
 #endregion CREATE
 
+#region LIBRARY
+- link:
+    ~/lib/:
+        glob: true
+        path: home/lib/*
+#endregion LIBRARY
+
 #region ZSH
 # ZSH: INCLUDE
 - link:
@@ -147,7 +154,7 @@
    ~/.oh-my-zsh/custom/002-app.zsh: ohmyzsh/custom/002-app.zsh
    ~/.oh-my-zsh/custom/007-env-eza.zsh: ohmyzsh/custom/007-env-eza.zsh
    ~/.oh-my-zsh/custom/010-java.zsh:
-     if: '[ ! `uname -n` = kycu ]'
+     if: '[ `uname` = Darwin ]'
      path: ohmyzsh/custom/010-java.zsh
 
 - link:
