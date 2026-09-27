@@ -107,9 +107,9 @@ brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done
     brew install zsh-patina
 
 # Install: brew: zsh-patina
-[group: 'brew']
-brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
-    #!/usr/bin/env zsh
-    brew install {{bundle}}
+# [group: 'brew']
+# brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
+#     #!/usr/bin/env zsh
+#     brew install {{bundle}}
 
 #endregion INSTALL SOFTWARE
