@@ -30,4 +30,9 @@ if [[ -f /Applications/MarkText.app/Contents/MacOS/MarkText ]]; then
 elif [[ -f ~/Applications/MarkText.app/Contents/MacOS/MarkText ]]; then
     alias marktext=~/Applications/MarkText.app/Contents/MacOS/MarkText
 fi
+
+## Applications
 #####################################################################
+if hasSoftware "brew"; then
+    alias bifo="brew info"
+fi
