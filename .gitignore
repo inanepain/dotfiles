@@ -2,3 +2,5 @@
 **/tempCodeRunner*
 *.pui
 *.prj
+*.geany
+*.code-workspace

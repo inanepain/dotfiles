@@ -109,6 +109,7 @@
       path: home/zsh.d/kycdd-003b.*
 
 
+
 # ZSH: CONFIG kycdd.dev
 - link:
    ~/.zsh.d/:
@@ -208,7 +209,7 @@
 #endregion OHMYZSH
 
 #region CONFIG
-# CONFIG: ZSH-PATINA
+# CONFIG: 
 - link:
     ~/.config/atuin:
         glob: true
@@ -222,6 +223,9 @@
     ~/.config/starship:
         glob: true
         path: home/config/starship/*
+    ~/.config/superfile:
+        glob: true
+        path: home/config/superfile/*
     ~/.config/zsh-patina:
         glob: true
         path: home/config/zsh-patina/*

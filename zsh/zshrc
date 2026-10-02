@@ -97,12 +97,12 @@ fi
 setopt beep nomatch
 # End of lines configured by zsh-newuser-install
 # If you come from bash you might have to change your $PATH.
-addToPathAndClean /usr/local/mysql-9.3.0-macos15-arm64/bin "before"
-addToPathAndClean "$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin" "before"
-addToPathAndClean "$HOME/.composer/vendor/bin" "before"
-addToPathAndClean /usr/local/bin "before"
-addToPathAndClean "$HOME/.local/bin" "before"
-addToPathAndClean "$HOME/bin" "before"
+add_to_path /usr/local/mysql-9.3.0-macos15-arm64/bin "before"
+add_to_path "$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin" "before"
+add_to_path "$HOME/.composer/vendor/bin" "before"
+add_to_path /usr/local/bin "before"
+add_to_path "$HOME/.local/bin" "before"
+add_to_path "$HOME/bin" "before"
 addToPathAndClean "$HOME/.cargo/bin"
 
 ################################################
@@ -254,11 +254,13 @@ export VISUAL="$EDITOR"
 export ARCHFLAGS="-arch $(uname -m)"
 
 if hasSoftware "brew"; then
-	addToPathAndClean "$HOMEBREW_PREFIX/opt/sqlite/bin" "before"
-	addToPathAndClean "$HOMEBREW_PREFIX/opt/ruby/bin" "before"
-	addToPathAndClean "$HOMEBREW_PREFIX/bin" "before"
-	addToPathAndClean "$HOMEBREW_PREFIX/sbin" "before"
+	add_to_path "$HOMEBREW_PREFIX/opt/sqlite/bin" "before"
+	add_to_path "$HOMEBREW_PREFIX/opt/ruby/bin" "before"
+	add_to_path "$HOMEBREW_PREFIX/bin" "before"
+	add_to_path "$HOMEBREW_PREFIX/sbin" "before"
 fi
+
+addToPathAndClean "$HOME/.lmstudio/bin"
 
 # INANE
 # term app
@@ -290,14 +292,3 @@ fi
 
 export PATH
 
-
-
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/philip/.lmstudio/bin"
-# End of LM Studio CLI section
-
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

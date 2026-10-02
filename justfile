@@ -110,6 +110,7 @@ omz-update-plugins: (_start "OMZ: plugins: updating...") && (_done "OMZ: plugins
 # [group: 'brew']
 # brew-install bundle="zsh-patina": (_start "brew: install: {{bundle}}") && (_done "brew: install: {{bundle}}")
 #     #!/usr/bin/env zsh
-#    brew install {{bundle}}
+#     brew install {{bundle}}
+
 
 #endregion INSTALL SOFTWARE
