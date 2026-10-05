@@ -1,1 +1,2 @@
 # Copy to local.zsh for custom loading not included in the repository.
+# cp local.zsh.dist ./local.zsh
