@@ -5,10 +5,7 @@
 #----------------------------------------
 
 # FUNCTION AUTOLOADING
-export fpath=("$HOME/bin/functions" "${fpath[@]}")
-export fpath=(${(@uo)fpath})
-autoload -Uz $HOME/bin/functions/*(-.:t)
-colours
+source ~/bin/functions/colours
 #########################################
 
 # Check if path is found then appends it to the path
@@ -260,6 +257,11 @@ plugins=("${(@uo)plugins}")
 
 # source omz
 source $ZSH/oh-my-zsh.sh
+
+# FUNCTION AUTOLOADING
+export fpath=("$HOME/bin/functions" "${fpath[@]}")
+export fpath=(${(@uo)fpath})
+autoload -Uz $HOME/bin/functions/*(-.:t)
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

@@ -61,3 +61,16 @@ Store host specific configuration "plugins".
 {OPT_SOURCE}.zshrc:
 
 * Included right at the end of `.zshrc`.
+
+== MacPorts
+
+[source,zsh]
+----
+function portsrch() {
+    port search --name --glob "$1"
+}
+
+function portsrchfzy() {
+    port search --name --glob "$1*"
+}
+----
