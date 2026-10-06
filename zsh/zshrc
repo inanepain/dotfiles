@@ -5,8 +5,8 @@
 #----------------------------------------
 
 # FUNCTION AUTOLOADING
-fpath=("$HOME/bin/functions" $fpath)
-fpath=(${(u)fpath})
+export fpath=("$HOME/bin/functions" "${fpath[@]}")
+export fpath=(${(@uo)fpath})
 autoload -Uz $HOME/bin/functions/*(-.:t)
 colours
 #########################################
@@ -255,10 +255,8 @@ fi
 
 # Add default plugins
 plugins+=($plugins aliases alias-finder copyfile copypath fzf git sudo z)
-# remove duplicates from plugins
-plugins=("${(@u)plugins}")
-# sort plugins
-plugins=("${(@o)plugins}")
+# remove duplicates and sort from plugins
+plugins=("${(@uo)plugins}")
 
 # source omz
 source $ZSH/oh-my-zsh.sh
