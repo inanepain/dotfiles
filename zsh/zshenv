@@ -30,3 +30,4 @@ fi
 # fpath=("$HOME/bin/function/" $fpath)
 # autoload -Uz $HOME/bin/functions/*(-.:t)
 
+. "$HOME/.cargo/env"

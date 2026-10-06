@@ -12,6 +12,7 @@
     ~/.local/state:
     ~/.config:
        mode: 0754
+    ~/.config/direnv/dump:
     ~/.cache:
        mode: 0754
 
@@ -106,6 +107,8 @@
       if: '[ `uname -n` = kycdd-003b.local ]'
       glob: true
       path: home/zsh.d/kycdd-003b.*
+
+
 
 # ZSH: CONFIG kycdd.dev
 - link:
