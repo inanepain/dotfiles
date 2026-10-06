@@ -5,7 +5,7 @@ source "${0:A:h}/include/inc.plugins.detect.zsh"
 
 # export STARSHIP_CONFIG=~/.config/starship/develop.toml
 
-plugins+=(autoupdate copybuffer dash extract forgit iterm2 macos mosh rsync tt zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools)
+plugins+=(autoupdate dash extract forgit iterm2 macos mosh rsync zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools)
 # thefuck
 
 # if [[ ! $TERMINAL_EMULATOR = "JetBrains-JediTerm" ]]; then
