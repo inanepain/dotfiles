@@ -109,7 +109,6 @@
       path: home/zsh.d/kycdd-003b.*
 
 
-
 # ZSH: CONFIG kycdd.dev
 - link:
    ~/.zsh.d/:

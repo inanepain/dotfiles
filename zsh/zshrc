@@ -4,10 +4,12 @@
 # source ~/.zsh.d\include\lib.settings.zsh
 #----------------------------------------
 
+# FUNCTION AUTOLOADING
 fpath=("$HOME/bin/functions" $fpath)
+fpath=(${(u)fpath})
 autoload -Uz $HOME/bin/functions/*(-.:t)
-
 colours
+#########################################
 
 # Check if path is found then appends it to the path
 # - use before as argument two to prepend it to the path
@@ -251,18 +253,15 @@ fi
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-# zsh-syntax-highlighting
+# Add default plugins
 plugins+=($plugins aliases alias-finder copyfile copypath fzf git sudo z)
 # remove duplicates from plugins
 plugins=("${(@u)plugins}")
 # sort plugins
 plugins=("${(@o)plugins}")
-source $ZSH/oh-my-zsh.sh
 
-# FUNCTION AUTOLOADING
-fpath=("$HOME/bin/functions" $fpath)
-fpath=(${(u)fpath})
-autoload -Uz $HOME/bin/functions/*(-.:t)
+# source omz
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
