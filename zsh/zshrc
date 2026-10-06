@@ -81,7 +81,7 @@ function addPlugin() {
         if zstyle -t ':inane:function:software:plugin' 'success'; then
 		    msg "Loaded Plugin: $Green$key"
 	    fi
-        plugins+=($plugins $key)
+        plugins+=($key)
 	elif zstyle -t ':inane:function:software:plugin' 'error'; then
 		msg "Skipped Plugin: $Red$key"
     fi
@@ -254,7 +254,7 @@ fi
 # Add wisely, as too many plugins slow down shell startup.
 
 # Add default plugins
-plugins+=($plugins aliases alias-finder copyfile copypath fzf git sudo z)
+plugins+=(aliases alias-finder copyfile copypath fzf git sudo z)
 # remove duplicates and sort from plugins
 plugins=("${(@uo)plugins}")
 
