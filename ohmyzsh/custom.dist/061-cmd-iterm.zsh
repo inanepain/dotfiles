@@ -6,6 +6,7 @@
 ## command
 # iTerm
 #####################################################################
+# __CFBundleIdentifier=com.googlecode.iterm2
 if [[ $INANE_TERM_PROGRAM = "iTerm.app" ]]; then
-  test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+	test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi

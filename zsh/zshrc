@@ -105,7 +105,6 @@ if [[ -f ~/.zsh.d/$OPT_SOURCE.env ]]; then
 fi
 ################################################
 
-
 # Lines configured by zsh-newuser-install
 setopt autocd extendedglob
 unsetopt nomatch
@@ -120,6 +119,7 @@ setopt beep nomatch
 add_to_path /usr/local/mysql-9.3.0-macos15-arm64/bin "before"
 add_to_path "$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin" "before"
 add_to_path "$HOME/.composer/vendor/bin" "before"
+add_to_path "$HOME/.config/composer/vendor/bin" "before"
 add_to_path /usr/local/bin "before"
 add_to_path "$HOME/.local/bin" "before"
 add_to_path "$HOME/bin" "before"
@@ -239,6 +239,12 @@ export UPDATE_ZSH_DAYS=5
 ZSH_CUSTOM_AUTOUPDATE_QUIET=false
 ZSH_CUSTOM_AUTOUPDATE_NUM_WORKERS=1
 
+# PLUGIN: magic-enter
+MAGIC_ENTER_GIT_COMMAND='git status -u .'
+# MAGIC_ENTER_OTHER_COMMAND='ls -lh .'
+# MAGIC_ENTER_OTHER_COMMAND='eza -l -ssize --group-directories-first --icons=auto'
+MAGIC_ENTER_OTHER_COMMAND='eza -l --group-directories-first --icons=auto'
+
 # INANE
 if [[ -f "$HOME/.inane/init.zsh" ]]; then
 	eval "$(cat $HOME/.inane/init.zsh)"
@@ -286,14 +292,6 @@ fi
 
 addToPathAndClean "$HOME/.lmstudio/bin"
 
-# INANE
-# term app
-# - Apple_Terminal
-# - iTerm.app
-# - ghostty
-# - xterm-kitty
-[[ ! -z $TERM_PROGRAM ]] && INANE_TERM_PROGRAM=$TERM_PROGRAM || INANE_TERM_PROGRAM=$TERM
-
 INANE_SHELL_TYPE=0
 # test interactive shell
 if [[ -o interactive ]]; then
@@ -315,4 +313,3 @@ fi
 ################################################
 
 export PATH
-

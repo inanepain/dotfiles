@@ -25,6 +25,13 @@ if which brew >/dev/null; then
   eval "$(brew shellenv)"
 fi
 
+# INANE
+# term app
+# - Apple_Terminal
+# - iTerm.app
+# - ghostty
+# - xterm-kitty
+[[ ! -z $TERM_PROGRAM ]] && INANE_TERM_PROGRAM=$TERM_PROGRAM || INANE_TERM_PROGRAM=$TERM
 
 # FUNCTION AUTOLOADING
 # fpath=("$HOME/bin/function/" $fpath)

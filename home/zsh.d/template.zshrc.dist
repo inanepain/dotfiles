@@ -2,5 +2,3 @@
 ## zsh: zshrc: included right at the end of zshrc.
 # cp ~/.dotfiles/home/zsh.d/template.zshrc.dist ~/.zsh.d/$OPT_SOURCE.zshrc
 ##################################################
-source <(COMPLETE=zsh slumber)
-addToPathAndClean "/usr/local/opt/openjdk/bin"

@@ -1,6 +1,6 @@
-#########################################
-#				ZSHRC: blackbetty
-#########################################
+##################################################
+## zsh: zshrc: included right at the end of zshrc.
+##################################################
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 source /Users/philip/.config/op/plugins.sh

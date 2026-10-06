@@ -4,6 +4,8 @@
       relink: true
       force: true
 
+# ==================================================
+
 - clean:
    ~/:
    ~/bin:
@@ -14,6 +16,8 @@
       recursive: true
    ~/.zsh.d:
       recursive: true
+
+# ==================================================
 
 #region CREATE
 # XDG
@@ -74,12 +78,16 @@
     ~/man/man8:
 #endregion CREATE
 
+# ==================================================
+
 #region LIBRARY
 - link:
     ~/lib/:
         glob: true
         path: home/lib/*
 #endregion LIBRARY
+
+# ==================================================
 
 #region ZSH
 # ZSH: INCLUDE
@@ -120,7 +128,6 @@
       glob: true
       path: home/zsh.d/kycdd-003b.*
 
-
 # ZSH: CONFIG kycdd.dev
 - link:
    ~/.zsh.d/:
@@ -128,14 +135,14 @@
       glob: true
       path: home/zsh.d/kycdd.dev.*
 
-# ZSH: CONFIG
+# ZSH: CONFIG kycx
 - link:
-   ~/.zsh.d/kycx.zsh:
+   ~/.zsh.d/:
       if: '[ `uname -n` = kycx ]'
-      path: home/zsh.d/kycx.zsh
-   ~/.zsh.d/kycx.zshrc:
-      if: '[ `uname -n` = kycx ]'
-      path: home/zsh.d/kycx.zshrc
+      glob: true
+      path: home/zsh.d/kycx.*
+
+# ==================================================
 
 # ZSH: CORE
 - link:
@@ -167,6 +174,8 @@
     glob: true
     path: home/bin/functions/*
 #endregion ZSH
+
+# ==================================================
 
 #region OHMYZSH
 # OH-MY-ZSH
@@ -208,7 +217,6 @@
    ~/.oh-my-zsh/custom/061-cmd-ghq.zsh: ohmyzsh/custom/061-cmd-ghq.zsh
    ~/.oh-my-zsh/custom/061-cmd-hurl.zsh: ohmyzsh/custom/061-cmd-hurl.zsh
    ~/.oh-my-zsh/custom/061-cmd-intelli-shell.zsh: ohmyzsh/custom/061-cmd-intelli-shell.zsh
-   ~/.oh-my-zsh/custom/061-cmd-iterm.zsh: ohmyzsh/custom/061-cmd-iterm.zsh
    ~/.oh-my-zsh/custom/061-cmd-lla.zsh: ohmyzsh/custom/061-cmd-lla.zsh
    ~/.oh-my-zsh/custom/061-cmd-moor.zsh: ohmyzsh/custom/061-cmd-moor.zsh
    ~/.oh-my-zsh/custom/061-cmd-navi.zsh: ohmyzsh/custom/061-cmd-navi.zsh
@@ -216,6 +224,7 @@
    ~/.oh-my-zsh/custom/061-cmd-sqlite3.zsh: ohmyzsh/custom/061-cmd-sqlite3.zsh
    ~/.oh-my-zsh/custom/061-cmd-todo.zsh: ohmyzsh/custom/061-cmd-todo.zsh
    ~/.oh-my-zsh/custom/061-cmd-zsh-patina.zsh: ohmyzsh/custom/061-cmd-zsh-patina.zsh
+   # ~/.oh-my-zsh/custom/061-cmd-iterm.zsh: ohmyzsh/custom/061-cmd-iterm.zsh
 
 - link:
    ~/.oh-my-zsh/custom/500-colours.zsh: ohmyzsh/custom/500-colours.zsh
@@ -226,6 +235,8 @@
 - link:
    ~/.oh-my-zsh/custom/950-gh-token.zsh: ohmyzsh/custom/950-gh-token.zsh
 #endregion OHMYZSH
+
+# ==================================================
 
 #region CONFIG
 # CONFIG: 
@@ -250,11 +261,15 @@
         path: home/config/zsh-patina/*
 #endregion CONFIG
 
+# ==================================================
+
 - link:
    ~/.netrc: home/netrc
    
 - link:
    ~/etc/mysql/my.cnf: home/etc/mysql/my.cnf
+
+# ==================================================
 
 - shell:
    - [git submodule update --init --recursive, Installing submodules]

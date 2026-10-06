@@ -2,6 +2,4 @@
 ## zsh: config
 ##################################################
 source "${0:A:h}/include/inc.plugins.detect.zsh"
-# export STARSHIP_CONFIG=~/.config/starship/develop.toml
-
 plugins+=(autoupdate forgit zsh-autosuggestions zsh-interactive-cd zsh-navigation-tools zsh-you-should-use)
