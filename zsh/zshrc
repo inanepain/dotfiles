@@ -64,6 +64,27 @@ function hasSoftware() {
 	fi
 }
 
+# Add key to omz plugins if valid
+# eg: if plugin and cmd the same only 1 argument needed
+# usage: addPlugin npm
+# eg: if the differ, 1st = key & 2nd = cmd
+# usage: addPlugin fancygit git
+# eg: If key has no required cmd use a -
+# usage: addPlugin aliases -
+function addPlugin() {
+    local key=$1
+    local cmd=${2:-$key}
+    
+	if [[ $cmd == "-" ]] || which $cmd >/dev/null; then
+        if zstyle -t ':inane:function:software:plugin' 'success'; then
+		    msg "Loaded Plugin: $Green$key"
+	    fi
+        plugins+=($plugins $key)
+	elif zstyle -t ':inane:function:software:plugin' 'error'; then
+		msg "Skipped Plugin: $Red$key"
+    fi
+}
+
 # Add To Path And Clean
 # the same as add_to_path but removes duplicates as it goes.
 function addToPathAndClean() {
@@ -232,6 +253,10 @@ fi
 
 # zsh-syntax-highlighting
 plugins+=($plugins aliases alias-finder copyfile copypath fzf git sudo z)
+# remove duplicates from plugins
+plugins=("${(@u)plugins}")
+# sort plugins
+plugins=("${(@o)plugins}")
 source $ZSH/oh-my-zsh.sh
 
 # FUNCTION AUTOLOADING
