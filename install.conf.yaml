@@ -2,6 +2,18 @@
     link:
       create: true
       relink: true
+      force: true
+
+- clean:
+   ~/:
+   ~/bin:
+      recursive: true
+   ~/.oh-my-zsh:
+      recursive: true
+   ~/.oh-my-zsh/custom:
+      recursive: true
+   ~/.zsh.d:
+      recursive: true
 
 #region CREATE
 # XDG
@@ -162,25 +174,34 @@
    ~/.oh-my-zsh/custom/000-env.zsh: ohmyzsh/custom/000-env.zsh
    ~/.oh-my-zsh/custom/002-app.zsh: ohmyzsh/custom/002-app.zsh
    ~/.oh-my-zsh/custom/007-env-eza.zsh: ohmyzsh/custom/007-env-eza.zsh
-   ~/.oh-my-zsh/custom/010-java.zsh:
-     if: '[ `uname` = Darwin ]'
-     path: ohmyzsh/custom/010-java.zsh
 
 - link:
    ~/.oh-my-zsh/custom/050-aliases.zsh: ohmyzsh/custom/050-aliases.zsh
    ~/.oh-my-zsh/custom/051-aliases-php.zsh: ohmyzsh/custom/051-aliases-php.zsh
    ~/.oh-my-zsh/custom/051-aliases-suffix.zsh: ohmyzsh/custom/051-aliases-suffix.zsh
-   ~/.oh-my-zsh/custom/051-aliases-directory.zsh:
-     if: '[ `uname` = Darwin ]'
-     path: ohmyzsh/custom/051-aliases-directory.zsh
    ~/.oh-my-zsh/custom/051-aliases-global.zsh: ohmyzsh/custom/051-aliases-global.zsh
    ~/.oh-my-zsh/custom/052-aliases-git.zsh: ohmyzsh/custom/052-aliases-git.zsh
 
-- link:   
-   ~/.oh-my-zsh/custom/060-cmd.zsh: ohmyzsh/custom/060-cmd.zsh
+- link:
+   ~/.oh-my-zsh/custom/051-aliases-directory.zsh:
+     if: '[ `uname` = Darwin ]'
+     path: ohmyzsh/custom/051-aliases-directory.zsh
+   ~/.oh-my-zsh/custom/010-java.zsh:
+     if: '[ `uname` = Darwin ]'
+     path: ohmyzsh/custom/010-java.zsh
+
+- link:
+   ~/.oh-my-zsh/custom/061-cmd-nvm.zsh: 
+      if: '[ `uname -n` = kycdd-003b.local ]'
+      path: ohmyzsh/custom/061-cmd-nvm.zsh
+
+- link:
    ~/.oh-my-zsh/custom/061-cmd-atuin.zsh: 
       if: '[ ! `uname -n` = kycu  ]'
       path: ohmyzsh/custom/061-cmd-atuin.zsh
+
+- link:   
+   ~/.oh-my-zsh/custom/060-cmd.zsh: ohmyzsh/custom/060-cmd.zsh
    ~/.oh-my-zsh/custom/061-cmd-boring.zsh: ohmyzsh/custom/061-cmd-boring.zsh
    ~/.oh-my-zsh/custom/061-cmd-broot.zsh: ohmyzsh/custom/061-cmd-broot.zsh
    ~/.oh-my-zsh/custom/061-cmd-folderify.zsh: ohmyzsh/custom/061-cmd-folderify.zsh
@@ -191,7 +212,6 @@
    ~/.oh-my-zsh/custom/061-cmd-lla.zsh: ohmyzsh/custom/061-cmd-lla.zsh
    ~/.oh-my-zsh/custom/061-cmd-moor.zsh: ohmyzsh/custom/061-cmd-moor.zsh
    ~/.oh-my-zsh/custom/061-cmd-navi.zsh: ohmyzsh/custom/061-cmd-navi.zsh
-   ~/.oh-my-zsh/custom/061-cmd-nvm.zsh: ohmyzsh/custom/061-cmd-nvm.zsh
    ~/.oh-my-zsh/custom/061-cmd-pet.zsh: ohmyzsh/custom/061-cmd-pet.zsh
    ~/.oh-my-zsh/custom/061-cmd-sqlite3.zsh: ohmyzsh/custom/061-cmd-sqlite3.zsh
    ~/.oh-my-zsh/custom/061-cmd-todo.zsh: ohmyzsh/custom/061-cmd-todo.zsh
@@ -236,11 +256,6 @@
 - link:
    ~/etc/mysql/my.cnf: home/etc/mysql/my.cnf
 
-- clean:
-   ~/:
-   ~/bin:
-      recursive: true
-   ~/.oh-my-zsh:
-      recursive: true
-   ~/.zsh.d:
-      recursive: true
+- shell:
+   - [git submodule update --init --recursive, Installing submodules]
+   - [just omz-update-plugins]
