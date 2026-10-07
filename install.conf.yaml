@@ -161,6 +161,9 @@
     ~/bin/fresh-upgrade.zsh:
         if: '[ ! `uname -n` = BlackBetty.local ]'
         path: home/bin/fresh-upgrade.zsh
+    ~/bin/upgrade-intelli-shell.zsh:
+        if:  '[ ! `uname -n` = BlackBetty.local ]'
+        path: home/bin/upgrade-intelli-shell.zsh
     ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
     ~/bin/hide-file-extension.zsh: home/bin/hide-file-extension.zsh
     ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
