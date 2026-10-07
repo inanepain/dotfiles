@@ -50,17 +50,16 @@ function clean_path() {
 # - 'success' yes/no
 # usage: hasSoftware "fresh"
 function hasSoftware() {
-	if which $1 >/dev/null; then
-		if zstyle -t ':inane:function:software' 'success'; then
-			msg "Found Software: $Green$1"
+    local cmd=$1
+	if which $cmd >/dev/null; then
+		if zstyle -t ":inane:function:software:$cmd" success; then
+			msg "Found Software: $Green$cmd"
 		fi
 		return 0
-	else
-		if zstyle -t ':inane:function:software' 'error'; then
-			msg "Missing Software: $Red$1"
-		fi
-		return 1
+	elif zstyle -t ":inane:function:software:$cmd" error; then
+		msg "Missing Software: $Red$cmd"
 	fi
+	return 1
 }
 
 # Add key to omz plugins if valid
@@ -73,15 +72,17 @@ function hasSoftware() {
 function addPlugin() {
     local key=$1
     local cmd=${2:-$key}
-    
-	if [[ $cmd == "-" ]] || which $cmd >/dev/null; then
-        if zstyle -t ':inane:function:software:plugin' 'success'; then
-		    msg "Loaded Plugin: $Green$key"
-	    fi
+
+    if [[ $cmd == "-" ]] || which $cmd >/dev/null; then
+        if zstyle -t ":inane:function:software:plugin:$key" success; then
+            msg "Loaded Plugin: $Green$key"
+        fi
         plugins+=($key)
-	elif zstyle -t ':inane:function:software:plugin' 'error'; then
-		msg "Skipped Plugin: $Red$key"
+        return 0
+    elif zstyle -t ":inane:function:software:plugin:$key" error; then
+        msg "Skipped Plugin: $Red$key"
     fi
+    return 1
 }
 
 # Add To Path And Clean
