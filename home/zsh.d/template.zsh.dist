@@ -1,6 +1,6 @@
 ##################################################
 ## zsh: zsh: included after functions loaded.
-# cp ~/.dotfiles/home/zsh.d/template.zsh.dist ~/.zsh.d/$OPT_SOURCE.zsh
+# cp ~/.dotfiles/home/zsh.d/template.zshrc.dist ~/.dotfiles/home/zsh.d/$OPT_SOURCE.zshrc
 ##################################################
 source "${0:A:h}/include/inc.plugins.detect.zsh"
 plugins+=(extract)

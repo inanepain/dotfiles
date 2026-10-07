@@ -6,12 +6,22 @@
 ## command
 # intelli-shell
 #####################################################################
+# SKIP IF: PHPStorm
 if [ -z "$INTELLIJ_ENVIRONMENT_READER" ]; then
-	# eval "$(clippy completion zsh)"
-	# PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "/Users/philip/Library/Application Support/tea/autocomplete.zsh"
-	export GEMINI_API_KEY="AIzaSyBfcbh4CWayxDJD4WCAzi3DUtJnkAyhe-g"
+    export GEMINI_API_KEY="AIzaSyBfcbh4CWayxDJD4WCAzi3DUtJnkAyhe-g"
+    export INTELLI_HOME="$HOME/.local/share/intelli-shell"
 
-	if which intelli-shell >/dev/null; then
+    add_to_path "$INTELLI_HOME/bin"
+
+    if hasSoftware "intelli-shell"; then
+        export INTELLI_SEARCH_HOTKEY='^@'
+        export INTELLI_VARIABLE_HOTKEY='^l'
+        export INTELLI_BOOKMARK_HOTKEY='^b'
+        export INTELLI_FIX_HOTKEY='^x'
+        export INTELLI_SKIP_ESC_BIND=0
+        alias is="intelli-shell"
 		eval "$(intelli-shell init zsh)"
 	fi
+    
+    
 fi

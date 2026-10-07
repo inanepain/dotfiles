@@ -14,6 +14,7 @@ addPlugin "magic-enter" "-"
 addPlugin "npm"
 addPlugin "tldr"
 addPlugin "tt" "-"
+addPlugin "suse" "zypper"
 
 if [[ $INANE_TERM_PROGRAM = "iTerm.app" ]]; then
 	addPlugin "iterm2" "-"
