@@ -30,22 +30,22 @@ bindkey -s '^[i^[r' 'inane-x reload^M'
 
 ## BREW: alt-i + alt+b
 ##########################################################
-
-# (i)nane + (b)rew + (d)etails: package info
-bindkey -s '^[i^[b^[d' 'brew info `pbpaste`^M'
-
-# (i)nane + (b)rew + (s)earch: package search
-bindkey -s '^[i^[b^[s' 'brew search `pbpaste`^M'
-
-# (i)nane + (b)rew + (i)nstall: package install
-bindkey -s '^[i^[b^[i' 'brew install `pbpaste`^M'
-
-# (i)nane + (b)rew + (r)efresh (update): brew update
-bindkey -s '^[i^[b^[r' 'brew update^M'
-
-# (i)nane + (b)rew + (u)pgrade: brew upgrade
-bindkey -s '^[i^[b^[u' 'brew upgrade^M'
-
+if hasSoftware "brew"; then
+    # (i)nane + (b)rew + (d)etails: package info
+    bindkey -s '^[i^[b^[d' 'brew info `pbpaste`^M'
+    
+    # (i)nane + (b)rew + (s)earch: package search
+    bindkey -s '^[i^[b^[s' 'brew search `pbpaste`^M'
+    
+    # (i)nane + (b)rew + (i)nstall: package install
+    bindkey -s '^[i^[b^[i' 'brew install `pbpaste`^M'
+    
+    # (i)nane + (b)rew + (r)efresh (update): brew update
+    bindkey -s '^[i^[b^[r' 'brew update^M'
+    
+    # (i)nane + (b)rew + (u)pgrade: brew upgrade
+    bindkey -s '^[i^[b^[u' 'brew upgrade^M'
+fi
 ## DIRENV: alt-i + alt+d
 ##########################################################
 

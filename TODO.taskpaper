@@ -1,0 +1,3 @@
+dotfiles:
+    - eval "$(clippy completion zsh)"
+	- PROG=tea _CLI_ZSH_AUTOCOMPLETE_HACK=1 source "/Users/philip/Library/Application Support/tea/autocomplete.zsh"
