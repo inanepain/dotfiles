@@ -53,11 +53,11 @@ function hasSoftware() {
     local cmd=$1
 	if which $cmd >/dev/null; then
 		if zstyle -t ":inane:function:software:$cmd" success; then
-			msg "Found Software: $Green$cmd"
+			msg "${Blue}Software$NC Found: $Green$cmd"
 		fi
 		return 0
 	elif zstyle -t ":inane:function:software:$cmd" error; then
-		msg "Missing Software: $Red$cmd"
+		msg "${Blue}Software$NC Missing: $Red$cmd"
 	fi
 	return 1
 }
@@ -75,12 +75,12 @@ function addPlugin() {
 
     if [[ $cmd == "-" ]] || which $cmd >/dev/null; then
         if zstyle -t ":inane:function:software:plugin:$key" success; then
-            msg "Loaded Plugin: $Green$key"
+            msg "${Cyan}Plugin$NC Loaded: $Green$key"
         fi
         plugins+=($key)
         return 0
     elif zstyle -t ":inane:function:software:plugin:$key" error; then
-        msg "Skipped Plugin: $Red$key"
+        msg "${Cyan}Plugin$NC Skipped: $Red$key"
     fi
     return 1
 }
@@ -111,9 +111,6 @@ setopt autocd extendedglob
 unsetopt nomatch
 bindkey -e
 
-if hasSoftware "tabs"; then
-	tabs -4
-fi
 setopt beep nomatch
 # End of lines configured by zsh-newuser-install
 # If you come from bash you might have to change your $PATH.
@@ -139,6 +136,10 @@ if [[ -f ~/.zsh.d/$OPT_SOURCE.zsh ]]; then
 	source ~/.zsh.d/$OPT_SOURCE.zsh
 fi
 ################################################
+
+if hasSoftware "tabs"; then
+	tabs -4
+fi
 
 # Prompt for spelling correction of commands.
 #setopt CORRECT
