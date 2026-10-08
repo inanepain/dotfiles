@@ -1,0 +1,101 @@
+#!/usr/bin/env zsh
+## fileage
+# return age of file in days or if specified in hours
+local VERSION=4
+
+local DEVELOPER="Philip Michael Raab <peep@inane.co.za>"
+local SHARED_GLOBAL_TAGS="zsh script"
+
+## HISTORY
+# 4 : 2021 Dec 11
+# - added week, minute and second options
+#
+# 3 : 2021 Dec 03
+# - better (slightly) argument validation
+# - updated help message
+#
+# 2 : 2021 Oct 16
+# - added -h switch to return hours not days
+#
+# 1 : 2021 Oct 15
+# - initial
+
+## VARIABLES
+##########################################################
+local file OLD DAYS NOW
+local thisScript="$(basename $0)"
+
+# get age of eval file in days
+NOW=`date +%s`
+
+## FUNCTIONS
+##########################################################
+
+function show_help() {
+    echo "$thisScript (v$VERSION)"
+    echo " - number of days since file was last modified.\n"
+
+    [[ ! "$1" == "" ]] && echo "\t*** error: $1\n"
+
+    echo "usage: fileage [-v|-h] file"
+    echo "\t-v  : version"
+    echo "\t-y  : years"
+    echo "\t-w  : weeks"
+    echo "\t-d  : days (default)"
+    echo "\t-h  : hours"
+    echo "\t-m  : minutes"
+    echo "\t-s  : seconds"
+}
+
+## CODE: COMMON
+##########################################################
+
+# echo "$0 ($VERSION)"
+
+## CODE: CUSTOM
+##########################################################
+
+# check args
+if [[ $# == 0 ]]; then
+    show_help
+    return 1
+fi
+
+file="$1"
+
+# check arg a file
+if [[ ! -f "$1" ]]; then
+    if [[ "$1" == "-v" ]]; then
+        echo "$0 (v$VERSION)"
+        return 0
+    elif [[ $# -eq 2 && -f "$2" ]]; then
+        file="$2"
+        OLD=`date -r $file +%s`
+        (( DAYS = (NOW - OLD) ))
+
+        if [[ "$1" == "-y" ]]; then
+            (( DAYS = DAYS/60/60/24/365 ))
+        elif [[ "$1" == "-w" ]]; then
+            (( DAYS = DAYS/60/60/24/7 ))
+        elif [[ "$1" == "-d" ]]; then
+            (( DAYS = DAYS/60/60/24 ))
+        elif [[ "$1" == "-h" ]]; then
+            (( DAYS = DAYS/60/60 ))
+        elif [[ "$1" == "-m" ]]; then
+            (( DAYS = DAYS/60 ))
+        elif [[ "$1" == "-s" ]]; then
+            # nothing to do here since it's already in seconds
+        else
+            show_help "invalid switch specified: $1"
+            return 1
+        fi
+    else
+        show_help "missing/invalid file specified: $2"
+        return 1
+    fi
+else
+    OLD=`date -r $file +%s`
+    (( DAYS = (NOW - OLD)/60/60/24 ))
+fi
+
+echo $DAYS

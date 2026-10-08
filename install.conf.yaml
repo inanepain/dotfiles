@@ -155,18 +155,18 @@
 # ZSH: BIN
 - link:
     ~/bin/action-picker.zsh: home/bin/action-picker.zsh
-    ~/bin/bubu.zsh: home/bin/bubu.zsh
     ~/bin/ckhash.zsh: home/bin/ckhash.zsh
     ~/bin/dir2dmg.zsh: home/bin/dir2dmg.zsh
+    ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
+    ~/bin/hide-file-extension.zsh: home/bin/hide-file-extension.zsh
+    ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
+    ~/bin/fileage: home/bin/fileage
     ~/bin/fresh-upgrade.zsh:
         if: '[ ! `uname -n` = BlackBetty.local ]'
         path: home/bin/fresh-upgrade.zsh
     ~/bin/upgrade-intelli-shell.zsh:
         if:  '[ ! `uname -n` = BlackBetty.local ]'
         path: home/bin/upgrade-intelli-shell.zsh
-    ~/bin/gitea-upgrade.zsh: home/bin/gitea-upgrade.zsh
-    ~/bin/hide-file-extension.zsh: home/bin/hide-file-extension.zsh
-    ~/bin/iblocklist-update.zsh: home/bin/iblocklist-update.zsh
     ~/bin/kitty-installer.sh:
         if: '[ `uname -n` = BlackBetty.local ]'
         path: home/bin/kitty-installer.sh
