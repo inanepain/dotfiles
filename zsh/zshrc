@@ -74,12 +74,12 @@ function addPlugin() {
     local cmd=${2:-$key}
 
     if [[ $cmd == "-" ]] || which $cmd >/dev/null; then
-        if zstyle -t ":inane:function:software:plugin:$key" success; then
+        if zstyle -t ":inane:function:plugin:$key" success; then
             msg "${Cyan}Plugin$NC Loaded: $Green$key"
         fi
         plugins+=($key)
         return 0
-    elif zstyle -t ":inane:function:software:plugin:$key" error; then
+    elif zstyle -t ":inane:function:plugin:$key" error; then
         msg "${Cyan}Plugin$NC Skipped: $Red$key"
     fi
     return 1
