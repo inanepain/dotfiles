@@ -1,12 +1,15 @@
 #!/usr/bin/env zsh
 ## fileage
 # return age of file in days or if specified in hours
-local VERSION=4
+local VERSION=5
 
 local DEVELOPER="Philip Michael Raab <peep@inane.co.za>"
 local SHARED_GLOBAL_TAGS="zsh script"
 
 ## HISTORY
+# 5 : 2026 Oct 08
+# - added year option
+#
 # 4 : 2021 Dec 11
 # - added week, minute and second options
 #
