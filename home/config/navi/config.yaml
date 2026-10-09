@@ -1,0 +1,15 @@
+shell:
+  command: zsh
+  finder_command: zsh
+
+style:
+  tag:
+    color: blue
+  comment:
+    color: cyan
+  snippet:
+    color: red
+
+finder:
+  command: fzf
+  overrides_var: --height 3

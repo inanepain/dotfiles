@@ -253,6 +253,9 @@
     ~/.config/direnv:
         glob: true
         path: home/config/direnv/*
+    ~/.config/navi:
+        glob: true
+        path: home/config/navi/*
     ~/.config/starship:
         glob: true
         path: home/config/starship/*
