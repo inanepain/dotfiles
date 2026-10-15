@@ -6,6 +6,7 @@ export OPT_SOURCE=${OPT_SOURCE:l}
 
 export OPT_DEBUG="zshenv"
 export ENV_PHP_VENDOR="/Users/philip/Sites/inane-fw/vendor/autoload.php"
+export ENV_PHP_GLOBAL_VENDOR="/Users/philip/.composer/vendor/autoload.php"
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
