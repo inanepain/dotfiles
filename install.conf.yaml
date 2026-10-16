@@ -52,6 +52,10 @@
     ~/etc:
        mode: 0755
     ~/etc/oh-my-zsh:
+    ~/var:
+       mode: 0755
+    ~/var/log/httpd:
+    ~/var/log/php:
 
 # DEVELOPMENT & CODE & TEMP
 - create:
