@@ -11,3 +11,8 @@ develop=/mnt/c/Users/PhilipRaab/opt/develop
 inane=/mnt/c/Users/PhilipRaab/opt/inane-fw
 kycdd=/mnt/c/Users/PhilipRaab/Repositories/kycdd
 : ~develop ~inane ~kycdd
+
+if [[ ! -f ~/etc/atuin.sync || $(fileage -h ~/etc/atuin.sync) -gt 24 ]]; then
+	touch ~/etc/atuin.sync
+	atuin sync
+fi
