@@ -5,7 +5,7 @@
 # export ARCHFLAGS="-arch $(uname -m)"
 source /Users/philip/.config/op/plugins.sh
 
-if [[ ! -f ~/etc/atuin.sync || $(fileage -d ~/etc/atuin.sync) -gt 0 ]]; then
+if [[ ! -f ~/etc/atuin.sync || $(fileage -h ~/etc/atuin.sync) -gt 24 ]]; then
 	touch ~/etc/atuin.sync
 	atuin sync
 fi
