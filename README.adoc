@@ -62,6 +62,22 @@ Store host specific configuration "plugins".
 
 * Included right at the end of `.zshrc`.
 
+=== omz: custom
+
+=== numbering
+
+File name numberformat `062-{h[H.CODE]}-cmd-{command}.zsh`. Add the `H.CODE` for each host to recieve file.
+
+[cols="1,1"]
+|===
+| HOST | H.CODE
+
+|blackbetty |1
+|kycdd-003 |2
+|kycdd-003b |4
+
+|===
+
 == MacPorts
 
 [source,zsh]

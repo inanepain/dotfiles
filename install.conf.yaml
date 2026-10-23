@@ -241,6 +241,24 @@
 
 - link:
    ~/.oh-my-zsh/custom/950-gh-token.zsh: ohmyzsh/custom/950-gh-token.zsh
+
+- link:
+    ~/.oh-my-zsh/custom/:
+        if: '[ `uname -n` = BlackBetty.local ]'
+        glob: true
+        path: ohmyzsh/custom/062*h1*-cmd-*
+
+- link:
+     ~/.oh-my-zsh/custom/:
+        if: '[ `uname -n` = kycdd-003.local ]'
+        glob: true
+        path: ohmyzsh/custom/062*h2*-cmd-*
+
+- link:
+     ~/.oh-my-zsh/custom/:
+        if: '[ `uname -n` = kycdd-003b.local ]'
+        glob: true
+        path: ohmyzsh/custom/062*h4*-cmd-*
 #endregion OHMYZSH
 
 # ==================================================
